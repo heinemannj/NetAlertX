@@ -289,18 +289,18 @@ printf "%b\n" "${GREEN}[INSTALLING]                          ${RESET}Creating mo
 printf "%b\n" "--------------------------------------------------------------------------"
 
 printf "%b\n" "Cleaning up old mounts if any"
-umount "${INSTALL_DIR}/log" 2>/dev/null || true
-umount "${INSTALL_DIR}/api" 2>/dev/null || true
+#umount "${INSTALL_DIR}/log" 2>/dev/null || true
+#umount "${INSTALL_DIR}/api" 2>/dev/null || true
 
 printf "%b\n" "Creating log api folders if they don't exist"
-mkdir -p "${INSTALL_DIR}/log" 2>/dev/null || true
-mkdir -p "${INSTALL_DIR}/api" 2>/dev/null || true
+#mkdir -p "${INSTALL_DIR}/log" 2>/dev/null || true
+#mkdir -p "${INSTALL_DIR}/api" 2>/dev/null || true
 
 printf "%b\n" "--------------------------------------------------------------------------"
 printf "%b\n" "${GREEN}[INSTALLING]                          ${RESET}Mounting log and api folders as tmpfs"
 printf "%b\n" "--------------------------------------------------------------------------"
-mountpoint -q "${INSTALL_DIR}/log" || mount -t tmpfs -o noexec,nosuid,nodev tmpfs "${INSTALL_DIR}/log"
-mountpoint -q "${INSTALL_DIR}/api" || mount -t tmpfs -o noexec,nosuid,nodev tmpfs "${INSTALL_DIR}/api"
+#mountpoint -q "${INSTALL_DIR}/log" || mount -t tmpfs -o noexec,nosuid,nodev tmpfs "${INSTALL_DIR}/log"
+#mountpoint -q "${INSTALL_DIR}/api" || mount -t tmpfs -o noexec,nosuid,nodev tmpfs "${INSTALL_DIR}/api"
 chown -R www-data:www-data "${INSTALL_DIR}/log" "${INSTALL_DIR}/api"
 
 # Ensure plugins directory exists within the tmpfs mount
