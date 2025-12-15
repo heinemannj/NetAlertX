@@ -293,7 +293,7 @@ printf "%b\n" "Cleaning up old mounts if any"
 #umount "${INSTALL_DIR}/api" 2>/dev/null || true
 
 printf "%b\n" "Creating log api folders if they don't exist"
-#mkdir -p "${INSTALL_DIR}/log" 2>/dev/null || true
+mkdir -p "${INSTALL_DIR}/log" 2>/dev/null || true
 #mkdir -p "${INSTALL_DIR}/api" 2>/dev/null || true
 
 printf "%b\n" "--------------------------------------------------------------------------"
