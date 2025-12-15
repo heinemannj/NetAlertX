@@ -293,7 +293,8 @@ umount "${INSTALL_DIR}/log" 2>/dev/null || true
 umount "${INSTALL_DIR}/api" 2>/dev/null || true
 
 printf "%b\n" "Creating log api folders if they don't exist"
-mkdir -p "${INSTALL_DIR}/log" "${INSTALL_DIR}/api"
+mkdir -p "${INSTALL_DIR}/log"
+#mkdir -p "${INSTALL_DIR}/api"
 
 printf "%b\n" "--------------------------------------------------------------------------"
 printf "%b\n" "${GREEN}[INSTALLING]                          ${RESET}Mounting log and api folders as tmpfs"
