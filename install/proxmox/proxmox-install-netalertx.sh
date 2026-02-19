@@ -189,6 +189,9 @@ if [ ! -f "$INSTALL_DIR/front/buildtimestamp.txt" ]; then
   date +%s > "$INSTALL_DIR/front/buildtimestamp.txt"
 fi
 
+# Remove symlink
+rm "$INSTALL_DIR/api"
+
 printf "%b\n" "--------------------------------------------------------------------------"
 printf "%b\n" "${GREEN}[FINISHED]                          ${RESET}NetAlertX Installation complete"
 printf "%b\n" "--------------------------------------------------------------------------"
