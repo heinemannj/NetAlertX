@@ -349,6 +349,9 @@ export PYTHONPATH=/app
 touch /app/front/__init__.py
 touch /app/front/plugins/__init__.py
 
+ln-s /app/log /tmp/
+ln-s /app/api /tmp/
+
 # Activate the virtual python environment
 source /opt/netalertx-env/bin/activate
 
