@@ -182,6 +182,7 @@ printf "%b\n" "-----------------------------------------------------------------
 printf "%b\n" "${GREEN}[INSTALLING]                          ${RESET}Cloning application repository and setup"
 printf "%b\n" "--------------------------------------------------------------------------"
 
+rmdir -rf "$INSTALL_DIR"
 mkdir -p "$INSTALL_DIR"
 git clone https://github.com/netalertx/NetAlertX.git "$INSTALL_DIR/"
 
