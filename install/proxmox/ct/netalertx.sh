@@ -42,8 +42,8 @@ if [[ -n "${REPOS_URL}" ]]; then
   fi
   # Override build_container to use the custom repo URL
   original_func=$(declare -f build_container)
-  # Map official ProxmoxVE path to NetAlertX fork path - Corrected to include -install suffix
-  eval "$(echo "$original_func" | sed "s|https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/install/\${var_install}.sh|${REPOS_URL}/install/proxmox/install/\${var_install}-install.sh|g")"
+  # Map official ProxmoxVE path to NetAlertX fork path - EXTREMELY SURGICAL to avoid core breakages
+  eval "$(echo "$original_func" | sed "s|https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/install/\${var_install}.sh|${REPOS_URL}/install/proxmox/install/\${var_install}.sh|g")"
 fi
 
 # Define local installer path for testing
@@ -58,7 +58,7 @@ if [[ -f "$LOCAL_INSTALLER" ]]; then
 fi
 
 # Export variables to ensure they're passed to the installation script
-export NSAPP APP var_os var_version var_cpu var_ram var_disk var_unprivileged PORT VERBOSE REPO_URL REPO_BRANCH REPOS_URL
+export NSAPP APP var_os var_version var_cpu var_ram var_disk var_unprivileged PORT VERBOSE REPO_URL REPO_BRANCH
 
 # Support verbose logging
 if [[ "${VERBOSE:-no}" == "yes" ]]; then
