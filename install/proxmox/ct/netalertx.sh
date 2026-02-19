@@ -12,6 +12,10 @@
 # Import main orchestrator
 source <(curl -fsSL https://github.com/community-scripts/ProxmoxVE/raw/main/misc/build.func)
 
+REPOS_URL="https://raw.githubusercontent.com/JVKeller/NetAlertX/feat/proxmox-installer"
+REPO_URL="https://github.com/JVKeller/NetAlertX"
+REPO_BRANCH="feat/proxmox-installer"
+
 # Application Configuration
 APP="NetAlertX"
 var_tags="network;monitoring;security"
