@@ -190,7 +190,7 @@ if [ ! -f "$INSTALL_DIR/front/buildtimestamp.txt" ]; then
 fi
 
 # Remove symlink
-rm "$INSTALL_DIR/api"
+# rm "$INSTALL_DIR/api"
 
 printf "%b\n" "--------------------------------------------------------------------------"
 printf "%b\n" "${GREEN}[FINISHED]                          ${RESET}NetAlertX Installation complete"
@@ -290,7 +290,8 @@ printf "%b\n" "${GREEN}[INSTALLING]                          ${RESET}Creating pe
 printf "%b\n" "--------------------------------------------------------------------------"
 
 # Create directory structure
-mkdir -p "${INSTALL_DIR}/log/plugins" "${INSTALL_DIR}/api"
+mkdir -p "${INSTALL_DIR}/log/plugins"
+#mkdir -p "${INSTALL_DIR}/api"
 
 # Set ownership FIRST so www-data can create files
 chown -R www-data:www-data "${INSTALL_DIR}/log" "${INSTALL_DIR}/api"
